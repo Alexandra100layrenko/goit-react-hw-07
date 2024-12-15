@@ -54,7 +54,7 @@ const ContactForm = () => {
               id="name"
               name="name"
               className={s.input}
-              autocomplete="name"
+              autoComplete="name"
             />
             <ErrorMessage name="name" component="span" className={s.errorMessage} />
           </label>
@@ -64,7 +64,7 @@ const ContactForm = () => {
               id="number"
               name="number"
               className={s.input}
-              autocomplete="tel"
+              autoComplete="tel"
             />
             <ErrorMessage name="number" component="span" className={s.errorMessage} />
           </label>
