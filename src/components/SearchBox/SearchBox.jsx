@@ -24,7 +24,7 @@ const SearchBox = () => {
           className={s.search}
           value={filter}
           onChange={handleChange}
-          autocomplete="name"
+          autoComplete="name"
         />
       </label>
     </form>
