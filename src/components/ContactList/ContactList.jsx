@@ -6,6 +6,12 @@ import s from './ContactList.module.css';
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
 
+  console.log('Filtered contacts:', contacts);
+
+  if (!contacts.length) {
+    return <p>No contacts found</p>;
+  }
+
   return (
     <ul className={s.list}>
       {contacts.map(({ id, name, number }) => (

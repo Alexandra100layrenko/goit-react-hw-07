@@ -11,6 +11,7 @@ const initialState = {
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.pending, (state) => {
@@ -56,11 +57,12 @@ export { deleteContact };
 
 // Memoized selectors
 export const selectContacts = (state) => state.contacts.items || [];
-export const selectFilter = (state) => state.filters?.name || '';
+export const selectNameFilter = (state) => state.filters?.name || '';
 
 export const selectFilteredContacts = createSelector(
-  [selectContacts, selectFilter],
+  [selectContacts, selectNameFilter],
   (contacts, filter) => {
+    if (!filter) return contacts;
     return contacts.filter((contact) =>
       contact.name?.toLowerCase().includes(filter.toLowerCase())
     );

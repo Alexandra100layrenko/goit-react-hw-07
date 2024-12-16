@@ -6,6 +6,7 @@ import s from './SearchBox.module.css'
 const SearchBox = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectNameFilter);
+  console.log('Redux Filter State:', filter);
 
   const handleChange = e => {
     console.log('Input value:', e.target.value);
